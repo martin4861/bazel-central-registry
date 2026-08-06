@@ -1,0 +1,43 @@
+load("@bazel_skylib//rules:common_settings.bzl", "bool_flag")
+load("@rules_cc//cc:cc_library.bzl", "cc_library")
+
+bool_flag(
+    name = "disable_rtti",
+    build_setting_default = False,
+    visibility = ["//visibility:public"],
+)
+
+config_setting(
+    name = "_disable_rtti",
+    flag_values = {":disable_rtti": "true"},
+    visibility = ["//visibility:public"],
+)
+
+cc_library(
+    name = "rapidcheck",
+    srcs = glob([
+        "src/**/*.cpp",
+        "src/**/*.h",
+    ]),
+    hdrs = glob([
+        "include/**/*.h",
+        "include/**/*.hpp",
+    ]),
+    defines = select({
+        ":_disable_rtti": ["RC_DONT_USE_RTTI"],
+        "//conditions:default": [],
+    }),
+    includes = [
+        "extras/gtest/include",
+        "include",
+    ],
+    visibility = ["//visibility:public"],
+)
+
+cc_library(
+    name = "rapidcheck_gtest",
+    hdrs = ["extras/gtest/include/rapidcheck/gtest.h"],
+    includes = ["extras/gtest/include"],
+    visibility = ["//visibility:public"],
+    deps = [":rapidcheck"],
+)

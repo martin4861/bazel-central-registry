@@ -1,0 +1,8 @@
+{
+    "strip_prefix": "rapidcheck-f9302e2c961c48c0516621cde222e8366327b7c9",
+    "url": "https://github.com/emil-e/rapidcheck/archive/f9302e2c961c48c0516621cde222e8366327b7c9.tar.gz",
+    "integrity": "sha256-buHzoiioDR9OTc8uUIGSFxkyR0X14q6+0lkfNw5fIF0=",
+    "overlay": {
+        "BUILD.bazel": "sha256-9DaUP2pV5YiYHss0MQ/+MA2qyGLEbejHAF0lV4LQJ24="
+    }
+}

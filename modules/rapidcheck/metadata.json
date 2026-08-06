@@ -4,15 +4,16 @@
         {
             "email": "shaban_ziad@hotmail.com",
             "github": "shabanzd",
-            "name": "Ziad Shaban",
-            "github_user_id": 8200878
+            "github_user_id": 8200878,
+            "name": "Ziad Shaban"
         }
     ],
     "repository": [
         "github:emil-e/rapidcheck"
     ],
     "versions": [
-        "2023.12.14"
+        "2023.12.14",
+        "2026.04.25"
     ],
     "yanked_versions": {}
 }
